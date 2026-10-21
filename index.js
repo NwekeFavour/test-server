@@ -92,18 +92,6 @@ app.get("/api/plans", (req, res) => {
         "Basic analytics",
       ],
     },
-    {
-      id: 2,
-      name: "Premium",
-      price: 15000,
-      duration: "3 months",
-      features: [
-        "Access to all features",
-        "Priority support",
-        "Unlimited storage",
-        "Advanced analytics",
-      ],
-    },
   ];
 
   res.status(200).json({

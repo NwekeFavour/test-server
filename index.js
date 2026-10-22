@@ -101,7 +101,7 @@ app.get("/api/plans", (req, res) => {
 });
 
 
-app.get("/services", (req,res) => {
+app.get("/api/services", (req,res) => {
   res.status(200).json({
     data: "Welcome to COD201"
   })

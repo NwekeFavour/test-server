@@ -100,6 +100,13 @@ app.get("/api/plans", (req, res) => {
   });
 });
 
+
+app.get("/services", (req,res) => {
+  res.status(200).json({
+    data: "Welcome to COD201"
+  })
+})
+
 // Start server
 app.listen(3000, () => {
   console.log("Server running at http://localhost:3000");

@@ -107,6 +107,21 @@ app.get("/api/services", (req,res) => {
   })
 })
 
+app.get("/api/home", (req, res) => {
+  const data = [{
+    home: {
+      address: "RD315, Plot No.B4 Behind Nepa Quarters",
+      PhoneNo: "09126262661",
+      gender: "male"
+    }
+  }]
+
+
+  res.json({
+    data
+  })
+})
+
 // Start server
 app.listen(3000, () => {
   console.log("Server running at http://localhost:3000");

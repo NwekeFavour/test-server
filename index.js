@@ -108,7 +108,7 @@ app.get("/api/services", (req,res) => {
 })
 
 app.get("/api/home", (req, res) => {
-  const data = [{
+  const data = [
     {
       address: "RD315, Plot No.B4 Behind Nepa Quarters",
       PhoneNo: "09126262661",
@@ -119,8 +119,8 @@ app.get("/api/home", (req, res) => {
       address: "RD320, Plot No.B4 Behind Nepa Quarters",
       PhoneNo: "09126262667",
       gender: "female"
-    },
-  }]
+    }
+  ]
 
 
   res.json({

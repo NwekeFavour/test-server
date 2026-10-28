@@ -110,12 +110,14 @@ app.get("/api/services", (req,res) => {
 app.get("/api/home", (req, res) => {
   const data = [
     {
+      id: 1,
       address: "RD315, Plot No.B4 Behind Nepa Quarters",
       PhoneNo: "09126262661",
       gender: "male"
     },
     
     {
+      id: 2,
       address: "RD320, Plot No.B4 Behind Nepa Quarters",
       PhoneNo: "09126262667",
       gender: "female"

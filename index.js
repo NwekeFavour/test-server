@@ -11,11 +11,12 @@ app.use(express.json());
 // Temporary storage for learning purposes
 const users = [];
 
-app.get(("/", (req, res) => {
+app.get("/", (req, res) => {
   res.json({
     message: "This is coming from my server"
   })
-}))
+})
+
 // POST: Create a user account
 app.post("/api/users/register", async (req, res) => {
   try {

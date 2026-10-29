@@ -85,6 +85,9 @@ app.get("/api/users", (req, res) => {
 
 
 app.get("/api/plans", (req, res) => {
+  const terms = "terms & condition are explained below"
+  const services ="this is data is a test from the backend"
+  const text = "Hello from the server"
   const plans = [
     {
       id: 1,
@@ -103,6 +106,8 @@ app.get("/api/plans", (req, res) => {
   res.status(200).json({
     success: true,
     data: plans,
+    services,
+    terms
   });
 });
 

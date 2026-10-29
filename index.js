@@ -101,6 +101,18 @@ app.get("/api/plans", (req, res) => {
         "Basic analytics",
       ],
     },
+    {
+      id: 2,
+      name: "Basic",
+      price: 5000,
+      duration: "1 month",
+      features: [
+        "Access to basic features",
+        "Email support",
+        "Limited storage",
+        "Basic analytics",
+      ],
+    },
   ];
 
   res.status(200).json({

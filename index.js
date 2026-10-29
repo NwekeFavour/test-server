@@ -103,9 +103,9 @@ app.get("/api/plans", (req, res) => {
     },
     {
       id: 2,
-      name: "Basic",
-      price: 5000,
-      duration: "1 month",
+      name: "Premium",
+      price: 10000,
+      duration: "1 year",
       features: [
         "Access to basic features",
         "Email support",

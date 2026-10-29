@@ -107,7 +107,8 @@ app.get("/api/plans", (req, res) => {
     success: true,
     data: plans,
     services,
-    terms
+    terms, 
+    text
   });
 });
 

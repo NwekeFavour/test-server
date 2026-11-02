@@ -2,6 +2,7 @@
 const express = require("express");
 const cors = require("cors");
 const bcrypt = require("bcrypt");
+const products = require("./routes/products")
 
 const app = express();
 
@@ -9,78 +10,12 @@ app.use(cors());
 app.use(express.json());
 
 // Temporary storage for learning purposes
-const users = [];
 
-app.get("/", (req, res) => {
-  res.json({
-    message: "This is coming from my server"
-  })
-})
 
-// POST: Create a user account
-app.post("/api/users/register", async (req, res) => {
-  try {
-    const { firstname, lastname, email, password } = req.body;
+app.use("/api", products);
 
-    if (!firstname || !lastname || !email || !password) {
-      return res.status(400).json({
-        success: false,
-        message: "Username and password are required",
-      });
-    }
 
-    // Check whether username already exists
-    const existingUser = users.find(
-      (user) => user.firstname === firstname
-    );
 
-    if (existingUser) {
-      return res.status(409).json({
-        success: false,
-        message: "Username already exists",
-      });
-    }
-
-    // Hash the password before storing it
-    const hashedPassword = await bcrypt.hash(password, 10);
-
-    const newUser = {
-      id: users.length + 1,
-      username,
-      password: hashedPassword,
-    };
-
-    users.push(newUser);
-
-    return res.status(201).json({
-      success: true,
-      message: "Account created successfully",
-      user: {
-        id: newUser.id,
-        username: newUser.username,
-      },
-    });
-  } catch (error) {
-    return res.status(500).json({
-      success: false,
-      message: "Failed to create account",
-    });
-  }
-});
-
-// GET: Retrieve all users
-app.get("/api/users", (req, res) => {
-  const safeUsers = users.map(({ id, firstname }) => ({
-    id,
-    firstname,
-  }));
-
-  res.status(200).json({
-    success: true,
-    count: safeUsers.length,
-    users: safeUsers,
-  });
-});
 
 
 
@@ -142,8 +77,20 @@ app.get("/api/home", (req, res) => {
     
     {
       id: 2,
-      address: "RD320, Plot No.B4 Behind Nepa Quarters",
+      address: "RD320, Plot No.B10 Behind Nepa Quarters",
       PhoneNo: "09126262667",
+      gender: "female"
+    },
+    {
+      id: 3,
+      address: "RD310, Plot No.B7 Behind Nepa Quarters",
+      PhoneNo: "0912626067",
+      gender: "female"
+    },
+    {
+      id: 4,
+      address: "RD302, Plot No.B20 Behind Nepa Quarters",
+      PhoneNo: "09126262s7",
       gender: "female"
     }
   ]
